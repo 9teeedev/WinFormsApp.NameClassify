@@ -37,6 +37,9 @@
             label3 = new Label();
             txtLname = new TextBox();
             label4 = new Label();
+            btnCase1 = new Button();
+            btnCase2 = new Button();
+            btnCase3 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -44,7 +47,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(97, 54);
             label1.Name = "label1";
-            label1.Size = new Size(142, 30);
+            label1.Size = new Size(127, 24);
             label1.TabIndex = 0;
             label1.Text = "ชื่อ สกุล แบบเต็ม";
             // 
@@ -52,7 +55,7 @@
             // 
             txtFullname.Location = new Point(245, 51);
             txtFullname.Name = "txtFullname";
-            txtFullname.Size = new Size(461, 36);
+            txtFullname.Size = new Size(461, 29);
             txtFullname.TabIndex = 1;
             // 
             // btnClassify
@@ -70,7 +73,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(155, 142);
             label2.Name = "label2";
-            label2.Size = new Size(84, 30);
+            label2.Size = new Size(83, 24);
             label2.TabIndex = 3;
             label2.Text = "คำนำหน้า";
             // 
@@ -80,7 +83,7 @@
             txtTitle.Location = new Point(245, 139);
             txtTitle.Name = "txtTitle";
             txtTitle.ReadOnly = true;
-            txtTitle.Size = new Size(216, 36);
+            txtTitle.Size = new Size(216, 29);
             txtTitle.TabIndex = 4;
             // 
             // txtFname
@@ -89,7 +92,7 @@
             txtFname.Location = new Point(245, 191);
             txtFname.Name = "txtFname";
             txtFname.ReadOnly = true;
-            txtFname.Size = new Size(216, 36);
+            txtFname.Size = new Size(216, 29);
             txtFname.TabIndex = 6;
             // 
             // label3
@@ -97,7 +100,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(204, 197);
             label3.Name = "label3";
-            label3.Size = new Size(35, 30);
+            label3.Size = new Size(30, 24);
             label3.TabIndex = 5;
             label3.Text = "ชื่อ";
             // 
@@ -107,7 +110,7 @@
             txtLname.Location = new Point(245, 243);
             txtLname.Name = "txtLname";
             txtLname.ReadOnly = true;
-            txtLname.Size = new Size(216, 36);
+            txtLname.Size = new Size(216, 29);
             txtLname.TabIndex = 8;
             // 
             // label4
@@ -115,15 +118,48 @@
             label4.AutoSize = true;
             label4.Location = new Point(191, 246);
             label4.Name = "label4";
-            label4.Size = new Size(48, 30);
+            label4.Size = new Size(38, 24);
             label4.TabIndex = 7;
             label4.Text = "สกุล";
             // 
+            // btnCase1
+            // 
+            btnCase1.Location = new Point(580, 127);
+            btnCase1.Name = "btnCase1";
+            btnCase1.Size = new Size(126, 39);
+            btnCase1.TabIndex = 9;
+            btnCase1.Text = "นาย";
+            btnCase1.UseVisualStyleBackColor = true;
+            btnCase1.Click += btnCase1_Click;
+            // 
+            // btnCase2
+            // 
+            btnCase2.Location = new Point(580, 182);
+            btnCase2.Name = "btnCase2";
+            btnCase2.Size = new Size(126, 39);
+            btnCase2.TabIndex = 10;
+            btnCase2.Text = "ด.ร.";
+            btnCase2.UseVisualStyleBackColor = true;
+            btnCase2.Click += btnCase2_Click;
+            // 
+            // btnCase3
+            // 
+            btnCase3.Location = new Point(580, 233);
+            btnCase3.Name = "btnCase3";
+            btnCase3.Size = new Size(126, 39);
+            btnCase3.TabIndex = 11;
+            btnCase3.Text = "ณ เมืองบอน";
+            btnCase3.UseVisualStyleBackColor = true;
+            btnCase3.Click += btnCase3_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(11F, 30F);
+            AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1122, 635);
+            Controls.Add(btnCase3);
+            Controls.Add(btnCase2);
+            Controls.Add(btnCase1);
             Controls.Add(txtLname);
             Controls.Add(label4);
             Controls.Add(txtFname);
@@ -133,7 +169,7 @@
             Controls.Add(btnClassify);
             Controls.Add(txtFullname);
             Controls.Add(label1);
-            Font = new Font("Kanit", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Font = new Font("Microsoft Sans Serif", 14.2499981F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(5, 6, 5, 6);
             Name = "Form1";
             Text = "โปรแกรมแยกส่วนของชื่อ สกุล";
@@ -152,5 +188,8 @@
         private Label label3;
         private TextBox txtLname;
         private Label label4;
+        private Button btnCase1;
+        private Button btnCase2;
+        private Button btnCase3;
     }
 }

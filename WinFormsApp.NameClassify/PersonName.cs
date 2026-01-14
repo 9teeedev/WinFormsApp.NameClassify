@@ -106,19 +106,36 @@ namespace WinFormsApp.NameClassify
                 {
                     this.title = fullname.Substring(0, lastDot + 1);
                     nameLeft = fullname.Substring(lastDot + 1).Trim();
-                    int firstSpace = nameLeft.IndexOf(' ');
-                    this.firstName = nameLeft.Substring(0, firstSpace);
-                    this.lastName = nameLeft.Substring(firstSpace + 1);
+                    int firstSpace = -1;
+                    if (nameLeft.IndexOf(' ') != -1)
+                    {
+                        firstSpace = nameLeft.IndexOf(' ');
+                        this.firstName = nameLeft.Substring(0, firstSpace);
+                        this.lastName = nameLeft.Substring(firstSpace + 1);
+                        return;
+                    }
+                    this.firstName = nameLeft;
+                    this.lastName = "";
+
                 }
             }
             else
             {
+                int lengthOfPrefix = 0;
                 string[] name = fullname.Split(' ');
                 if (name[0].Contains(prefix[0]) || name[0].Contains(prefix[1]) || name[0].Contains(prefix[2]) || name[0].Contains(prefix[3]) || name[0].Contains(prefix[4]))
                 {
-                    this.title = name[0];
-                    this.firstName = name[1];
-                    for (int i = 2; i < name.Length; i++)
+                    for (int i =0; i < prefix.Length; i++)
+                    {
+                        if(name[0].Contains(prefix[i]))
+                        {
+                            this.title = prefix[i];
+                            lengthOfPrefix = prefix[i].Length;
+                            break;
+                        }
+                    }
+                    this.firstName = name[0].Substring(lengthOfPrefix);
+                    for (int i = 1; i < name.Length; i++)
                     {
                         this.lastName += $"{name[i]} ";
                     }
